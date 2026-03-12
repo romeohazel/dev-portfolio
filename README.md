@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Romeo Hazel — Developer Portfolio
+
+Spacecraft cockpit meets philosopher's notebook. A developer portfolio built with obsessive typographic detail and custom everything.
+
+## Stack
+
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript (strict mode)
+- **Styling:** Tailwind CSS v4
+- **Animations:** Framer Motion
+- **Fonts:** JetBrains Mono + Playfair Display
+- **Deploy:** Vercel
+
+## Features
+
+- Procedural star field (canvas-based)
+- Custom cursor with trailing ring
+- Nebula radial gradients
+- Scan lines + noise texture overlays
+- Scroll-triggered section reveals with staggered children
+- Animated skill bars
+- Cockpit-style project cards with system labels
+- Scattered UI details: coordinates, uptime counter, version numbers, status indicators
+- Asymmetric hero layout with orbiting decorative rings
+- Fully responsive
+- No component libraries — everything custom
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy to Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npx vercel
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Or connect the GitHub repo to [vercel.com](https://vercel.com) for automatic deploys.
