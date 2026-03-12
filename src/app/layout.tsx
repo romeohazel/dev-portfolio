@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import { AmbientProvider } from "@/hooks/useAmbient";
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AmbientProvider>{children}</AmbientProvider>
+        <Analytics />
       </body>
     </html>
   );
