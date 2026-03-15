@@ -61,14 +61,14 @@ const projects: PlantData[] = [
     ],
   },
   {
-    name: "Unfiltered",
+    name: "Momentary",
     tagline: "Social media without the scoreboard",
     description:
       "No likes, no follower counts, no algorithm. Just people posting what they actually care about. Chronological feeds, private reactions sent directly to the creator, and zero vanity metrics.",
     color: "#b8a0d2",
     leafColor: "#7a8f6b",
     leaves: ["React Native", "TypeScript", "Node.js", "PostgreSQL", "Redis"],
-    status: "in development",
+    status: "current project",
     stemHeight: 185,
     details: [
       "Feed is purely chronological — no engagement-optimizing algorithm deciding what you see",
