@@ -22,7 +22,7 @@ const timeline: TimelineEntry[] = [
     leafColor: "#6b8f5e",
   },
   {
-    year: "2024 –",
+    year: "2024 – 2028",
     title: "B.S. Computer Science",
     org: "CSUDH",
     detail: "Full stack development, algorithms, systems",

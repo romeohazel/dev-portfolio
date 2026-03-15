@@ -63,8 +63,13 @@ export default function Sun() {
           <h1 className="text-base tracking-[0.3em] uppercase font-light text-text-primary mb-3">
             Romeo Hazel
           </h1>
-          <p className="text-[13px] tracking-[0.1em] text-text-secondary font-mono mb-6">
+          <p className="text-[13px] tracking-[0.1em] text-text-secondary font-mono mb-4">
             full stack · CSUDH · incoming SWE @ Meta
+          </p>
+          <p className="text-[12px] leading-relaxed text-text-faint font-mono max-w-xs text-center mb-6">
+            20, solo founder, ex-kart racer turned builder.<br />
+            less interested in metrics, more in meaning —<br />
+            making things that outlast the moment.
           </p>
           <div className="flex items-center justify-center gap-6 text-[12px] tracking-[0.08em] text-text-faint font-mono">
             <a href="#garden" className="hover:text-moss-light transition-colors duration-500">
