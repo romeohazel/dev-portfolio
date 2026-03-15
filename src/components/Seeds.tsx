@@ -96,6 +96,9 @@ export default function Seeds() {
           <p className="text-[11px] tracking-[0.25em] text-text-faint font-mono">
             seeds — not yet planted
           </p>
+          <p className="text-[10px] tracking-[0.15em] text-text-faint/50 font-mono mt-1">
+            (project ideas)
+          </p>
         </motion.div>
 
         <div className="space-y-8">
