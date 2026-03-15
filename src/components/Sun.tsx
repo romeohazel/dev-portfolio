@@ -67,9 +67,7 @@ export default function Sun() {
             full stack · CSUDH · incoming SWE @ Meta
           </p>
           <p className="text-[12px] leading-relaxed text-text-faint font-mono max-w-xs text-center mb-6">
-            20, solo founder, ex-kart racer turned builder.<br />
-            less interested in metrics, more in meaning —<br />
-            making things that outlast the moment.
+            20, san diego, mobile developer, ex-college soccer player
           </p>
           <div className="flex items-center justify-center gap-6 text-[12px] tracking-[0.08em] text-text-faint font-mono">
             <a href="#garden" className="hover:text-moss-light transition-colors duration-500">
