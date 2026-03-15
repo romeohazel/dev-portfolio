@@ -145,7 +145,7 @@ export default function Experience() {
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8 md:mb-10">
           <p className="text-[11px] tracking-[0.25em] text-text-faint font-mono">
-            growth rings
+            growth tree
           </p>
         </div>
 
