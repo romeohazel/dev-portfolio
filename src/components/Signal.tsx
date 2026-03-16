@@ -12,7 +12,7 @@ export default function Signal() {
   const { ref, isInView } = useInView(0.2);
 
   return (
-    <section id="roots" className="relative py-16 md:py-24 px-6 md:px-12" ref={ref}>
+    <section id="roots" className="relative py-10 md:py-16 px-6 md:px-12" ref={ref}>
       <div className="max-w-3xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0 }}

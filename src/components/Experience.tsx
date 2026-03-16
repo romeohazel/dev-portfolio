@@ -141,7 +141,7 @@ export default function Experience() {
   const { ref, isInView } = useInView(0.1);
 
   return (
-    <section className="relative py-16 md:py-20 px-6 md:px-12" ref={ref}>
+    <section className="relative py-10 md:py-14 px-6 md:px-12" ref={ref}>
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8 md:mb-10">
           <p className="text-[11px] tracking-[0.25em] text-text-faint font-mono">

@@ -5,7 +5,6 @@ import Nav from "@/components/Nav";
 import Sun from "@/components/Sun";
 import SolarSystem from "@/components/SolarSystem";
 import Experience from "@/components/Experience";
-import Seeds from "@/components/Seeds";
 import Signal from "@/components/Signal";
 
 const GardenBg = dynamic(() => import("@/components/GardenBg"), {
@@ -21,7 +20,6 @@ export default function Home() {
         <Sun />
         <SolarSystem />
         <Experience />
-        <Seeds />
         <Signal />
         <footer className="py-8 text-center">
           <span className="text-[10px] tracking-[0.15em] text-text-faint font-mono">

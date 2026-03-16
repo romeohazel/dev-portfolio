@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 // The seed — you, at the root of the garden
 export default function Sun() {
   return (
-    <section className="relative h-[50vh] md:h-[65vh] flex items-center justify-center">
+    <section className="relative h-[40vh] md:h-[50vh] flex items-center justify-center">
       <div className="relative z-10 flex flex-col items-center">
         {/* Seed / root symbol */}
         <motion.div
