@@ -91,6 +91,7 @@ function Bloom({ color, hovered = false }: { color: string; hovered?: boolean })
 
 function TextBlock({ plant, expanded, setExpanded }: { plant: PlantData; expanded: boolean; setExpanded: (v: boolean) => void }) {
   const { ref, isInView } = useInView(0.3);
+  const detailsRef = useRef<HTMLDivElement>(null);
   const hasDetails = plant.details && plant.details.length > 0;
 
   return (
@@ -131,10 +132,16 @@ function TextBlock({ plant, expanded, setExpanded }: { plant: PlantData; expande
       <AnimatePresence>
         {expanded && plant.details && (
           <motion.div
+            ref={detailsRef}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4 }}
+            onAnimationComplete={() => {
+              if (expanded) {
+                detailsRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+              }
+            }}
             className="overflow-hidden"
           >
             <div className="pt-4 space-y-2.5 text-left">
