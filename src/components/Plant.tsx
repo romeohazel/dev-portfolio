@@ -124,7 +124,7 @@ function TextBlock({ plant }: { plant: PlantData }) {
           }}
           aria-expanded={expanded}
           aria-label={`${expanded ? "Collapse" : "Expand"} details for ${plant.name}`}
-          className="mt-3 text-[10px] tracking-[0.12em] font-mono transition-colors duration-300"
+          className="mt-3 py-1.5 px-3 text-[10px] tracking-[0.12em] font-mono transition-colors duration-300"
           style={{ color: expanded ? plant.color : undefined }}
         >
           {expanded ? "— collapse" : "+ read more"}
