@@ -66,7 +66,7 @@ function VineNodeEl({ entry, index }: { entry: TimelineEntry; index: number }) {
       animate={{ scale: 1 }}
       transition={{ duration: 0.4, delay: 0.1 }}
     >
-      <svg width="16" height="10" viewBox="0 0 16 10" className="absolute -top-1"
+      <svg width="16" height="10" viewBox="0 0 16 10" aria-hidden="true" className="absolute -top-1"
         style={{ animation: `sway-slow ${3 + index * 0.5}s ease-in-out infinite` }}
       >
         <path d="M0 5 Q8 0 16 5 Q8 10 0 5" fill={entry.leafColor} opacity={0.5} />

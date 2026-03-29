@@ -11,6 +11,8 @@ export default function GardenBg() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     let animationId: number;
     let t = 0;
 
@@ -363,6 +365,10 @@ export default function GardenBg() {
     };
 
     const draw = () => {
+      if (document.hidden) {
+        animationId = requestAnimationFrame(draw);
+        return;
+      }
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       t++;
       drawGrass();
@@ -375,7 +381,16 @@ export default function GardenBg() {
 
     resize();
     init();
-    draw();
+
+    if (prefersReducedMotion) {
+      // Draw a single static frame
+      drawGrass();
+      drawVines();
+      drawTrees();
+      drawFlowers();
+    } else {
+      draw();
+    }
 
     const onResize = () => {
       resize();
@@ -383,7 +398,7 @@ export default function GardenBg() {
     };
     window.addEventListener("resize", onResize);
     return () => {
-      cancelAnimationFrame(animationId);
+      if (!prefersReducedMotion) cancelAnimationFrame(animationId);
       window.removeEventListener("resize", onResize);
     };
   }, []);
@@ -393,6 +408,7 @@ export default function GardenBg() {
       ref={canvasRef}
       className="fixed inset-0 z-0"
       style={{ pointerEvents: "none" }}
+      aria-hidden="true"
     />
   );
 }

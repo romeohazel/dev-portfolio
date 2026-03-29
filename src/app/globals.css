@@ -18,27 +18,15 @@
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
-@font-face {
-  font-family: "JetBrains Mono";
-  font-style: normal;
-  font-weight: 100 800;
-  font-display: swap;
-  src: url("https://fonts.gstatic.com/s/jetbrainsmono/v18/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPVmUsaaDhw.woff2")
-    format("woff2");
-}
-
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 300 700;
-  font-display: swap;
-  src: url("https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2")
-    format("woff2");
-}
 
 ::selection {
   background: rgba(106, 143, 94, 0.3);
   color: #e4e0d8;
+}
+
+:focus-visible {
+  outline: 1px solid rgba(90, 122, 82, 0.5);
+  outline-offset: 2px;
 }
 
 html {
@@ -48,7 +36,7 @@ html {
 body {
   background: #0a0b08;
   color: #e4e0d8;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -94,4 +82,12 @@ body::before {
 @keyframes pulse-soft {
   0%, 100% { opacity: 0.6; }
   50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

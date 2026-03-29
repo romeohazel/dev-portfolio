@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
+import { track } from "@vercel/analytics";
 
 const channels = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/romeohazel/", id: "li" },
@@ -22,7 +23,7 @@ export default function Signal() {
         >
           {/* Root network visualization */}
           <div className="relative w-24 h-16 mx-auto mb-8">
-            <svg width="96" height="64" viewBox="0 0 96 64" className="opacity-40">
+            <svg width="96" height="64" viewBox="0 0 96 64" className="opacity-40" role="img" aria-label="Decorative root network">
               <motion.path
                 d="M48 0 L48 20"
                 stroke="#5a7a52"
@@ -79,6 +80,8 @@ export default function Signal() {
               href={ch.href}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => track("social_click", { platform: ch.label })}
+              aria-label={`Visit ${ch.label} profile`}
               className="text-[13px] tracking-[0.08em] font-mono text-text-faint hover:text-moss-light transition-colors duration-500"
             >
               {ch.label}

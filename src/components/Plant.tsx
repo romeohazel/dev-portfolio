@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
+import { track } from "@vercel/analytics";
 
 export interface PlantData {
   name: string;
@@ -40,7 +41,7 @@ function Leaf({ name, index, color }: {
       transition={{ delay: 0.5 + index * 0.12, duration: 0.5 }}
     >
       <svg
-        width="18" height="9" viewBox="0 0 18 9"
+        width="18" height="9" viewBox="0 0 18 9" aria-hidden="true"
         style={{
           transform: `rotate(${side === "left" ? -15 : 15}deg)`,
           animation: `sway-slow ${3 + index * 0.4}s ease-in-out infinite`,
@@ -117,7 +118,12 @@ function TextBlock({ plant }: { plant: PlantData }) {
       {/* Expand trigger */}
       {hasDetails && (
         <button
-          onClick={() => setExpanded(!expanded)}
+          onClick={() => {
+            if (!expanded) track("project_expand", { project: plant.name });
+            setExpanded(!expanded);
+          }}
+          aria-expanded={expanded}
+          aria-label={`${expanded ? "Collapse" : "Expand"} details for ${plant.name}`}
           className="mt-3 text-[10px] tracking-[0.12em] font-mono transition-colors duration-300"
           style={{ color: expanded ? plant.color : undefined }}
         >
@@ -165,6 +171,7 @@ function TextBlock({ plant }: { plant: PlantData }) {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`${link.label} ${plant.name}`}
               className="text-[10px] tracking-[0.1em] font-mono text-text-faint hover:text-moss-light transition-colors duration-300"
             >
               {link.label} →
@@ -184,7 +191,7 @@ export default function Plant({ plant, isInView }: {
 
   return (
     <div
-      className="flex flex-col items-center flex-shrink-0 w-[280px] md:w-[320px]"
+      className="flex flex-col items-center flex-shrink-0 w-[260px] sm:w-[280px] md:w-[320px]"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >

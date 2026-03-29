@@ -22,7 +22,7 @@ export function AmbientProvider({ children }: { children: ReactNode }) {
     if (playing) {
       audioRef.current.pause();
     } else {
-      audioRef.current.play();
+      audioRef.current.play().catch(() => {});
     }
     setPlaying((p) => !p);
   }, [playing]);

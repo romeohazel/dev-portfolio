@@ -25,6 +25,14 @@ export default function Nav() {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && menuOpen) setMenuOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen]);
+
   return (
     <>
       <motion.nav
@@ -37,7 +45,8 @@ export default function Nav() {
       >
         <div className="max-w-5xl mx-auto px-6 md:px-12 h-12 flex items-center justify-between">
           <a
-            href="#"
+            href="/"
+            aria-label="Romeo Hazel — home"
             className="text-[12px] tracking-[0.2em] font-mono text-text-secondary hover:text-text-primary transition-colors duration-300"
           >
             rh
@@ -63,7 +72,7 @@ export default function Nav() {
               aria-label="Toggle ambient sound"
               className="p-1.5 relative transition-colors duration-300"
             >
-              <svg width="14" height="14" viewBox="0 0 14 14" className="text-text-faint hover:text-text-secondary transition-colors">
+              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" className="text-text-faint hover:text-text-secondary transition-colors">
                 <path
                   d="M2 5.5h2l3-2.5v8l-3-2.5H2a.5.5 0 01-.5-.5V6a.5.5 0 01.5-.5z"
                   fill="none"

@@ -22,7 +22,7 @@ export default function Sun() {
             }}
           />
           {/* The seed */}
-          <svg width="40" height="56" viewBox="0 0 40 56" fill="none" className="opacity-60">
+          <svg width="40" height="56" viewBox="0 0 40 56" fill="none" className="opacity-60" role="img" aria-label="Decorative plant sprout">
             {/* Stem */}
             <motion.line
               x1="20" y1="56" x2="20" y2="28"
@@ -71,11 +71,11 @@ export default function Sun() {
             ex-college soccer player
           </p>
           <div className="flex items-center justify-center gap-6 text-[12px] tracking-[0.08em] text-text-faint font-mono">
-            <a href="#garden" className="hover:text-moss-light transition-colors duration-500">
+            <a href="#garden" aria-label="Explore projects garden" className="hover:text-moss-light transition-colors duration-500">
               explore garden
             </a>
             <span className="text-text-faint/30">·</span>
-            <a href="#roots" className="hover:text-moss-light transition-colors duration-500">
+            <a href="#roots" aria-label="Go to contact links" className="hover:text-moss-light transition-colors duration-500">
               reach out
             </a>
           </div>

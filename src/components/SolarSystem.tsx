@@ -112,38 +112,44 @@ export default function SolarSystem() {
       </div>
 
       {/* Horizontal scrolling garden bed */}
-      <div
-        ref={scrollRef}
-        className="overflow-x-auto pb-8 scrollbar-hide"
-        style={{
-          scrollbarWidth: "none",
-          msOverflowStyle: "none",
-        }}
-      >
-        <style jsx>{`
-          .scrollbar-hide::-webkit-scrollbar { display: none; }
-        `}</style>
+      <div className="relative">
+        {/* Fade edges to indicate scrollability */}
+        <div className="absolute left-0 top-0 bottom-0 w-8 md:w-16 bg-gradient-to-r from-soil to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-8 md:w-16 bg-gradient-to-l from-soil to-transparent z-10 pointer-events-none" />
 
-        <motion.div
-          className="flex items-end gap-3 md:gap-6 px-4 md:px-10"
-          style={{ width: "fit-content" }}
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8 }}
+        <div
+          ref={scrollRef}
+          className="overflow-x-auto pb-8 scrollbar-hide"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}
         >
-          {/* Left spacing */}
-          <div className="flex-shrink-0 w-1 md:w-10" />
+          <style jsx>{`
+            .scrollbar-hide::-webkit-scrollbar { display: none; }
+          `}</style>
 
-          {projects.map((project) => (
-            <Plant
-              key={project.name}
-              plant={project}
-              isInView={isInView}
-            />
-          ))}
+          <motion.div
+            className="flex items-end gap-3 md:gap-6 px-4 md:px-10"
+            style={{ width: "fit-content" }}
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Left spacing */}
+            <div className="flex-shrink-0 w-1 md:w-10" />
 
-          <div className="flex-shrink-0 w-1 md:w-10" />
-        </motion.div>
+            {projects.map((project) => (
+              <Plant
+                key={project.name}
+                plant={project}
+                isInView={isInView}
+              />
+            ))}
+
+            <div className="flex-shrink-0 w-1 md:w-10" />
+          </motion.div>
+        </div>
       </div>
 
     </section>
