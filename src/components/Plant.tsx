@@ -89,9 +89,8 @@ function Bloom({ color, hovered = false }: { color: string; hovered?: boolean })
   );
 }
 
-function TextBlock({ plant }: { plant: PlantData }) {
+function TextBlock({ plant, expanded, setExpanded }: { plant: PlantData; expanded: boolean; setExpanded: (v: boolean) => void }) {
   const { ref, isInView } = useInView(0.3);
-  const [expanded, setExpanded] = useState(false);
   const hasDetails = plant.details && plant.details.length > 0;
 
   return (
@@ -118,10 +117,7 @@ function TextBlock({ plant }: { plant: PlantData }) {
       {/* Expand trigger */}
       {hasDetails && (
         <button
-          onClick={() => {
-            if (!expanded) track("project_expand", { project: plant.name });
-            setExpanded(!expanded);
-          }}
+          onClick={() => setExpanded(!expanded)}
           aria-expanded={expanded}
           aria-label={`${expanded ? "Collapse" : "Expand"} details for ${plant.name}`}
           className="mt-3 py-1.5 px-3 text-[10px] tracking-[0.12em] font-mono transition-colors duration-300"
@@ -188,6 +184,8 @@ export default function Plant({ plant, isInView }: {
   isInView: boolean;
 }) {
   const [hovered, setHovered] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const hasDetails = plant.details && plant.details.length > 0;
 
   return (
     <div
@@ -196,7 +194,25 @@ export default function Plant({ plant, isInView }: {
       onMouseLeave={() => setHovered(false)}
     >
       {/* Plant visual growing upward */}
-      <div className="relative flex items-end justify-center" style={{ height: plant.stemHeight + 50 }}>
+      <div
+        className="relative flex items-end justify-center"
+        style={{ height: plant.stemHeight + 50, cursor: hasDetails ? "pointer" : undefined }}
+        onClick={() => {
+          if (!hasDetails) return;
+          if (!expanded) track("project_expand", { project: plant.name });
+          setExpanded(!expanded);
+        }}
+        role={hasDetails ? "button" : undefined}
+        aria-label={hasDetails ? `${expanded ? "Collapse" : "Expand"} details for ${plant.name}` : undefined}
+        tabIndex={hasDetails ? 0 : undefined}
+        onKeyDown={(e) => {
+          if (hasDetails && (e.key === "Enter" || e.key === " ")) {
+            e.preventDefault();
+            if (!expanded) track("project_expand", { project: plant.name });
+            setExpanded(!expanded);
+          }
+        }}
+      >
         <div
           className="relative transition-transform duration-700 ease-out"
           style={{
@@ -232,7 +248,7 @@ export default function Plant({ plant, isInView }: {
       <div className="mb-5" />
 
       {/* Text below the plant — only visible on scroll */}
-      <TextBlock plant={plant} />
+      <TextBlock plant={plant} expanded={expanded} setExpanded={setExpanded} />
     </div>
   );
 }
