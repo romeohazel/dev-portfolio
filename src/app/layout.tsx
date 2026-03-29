@@ -20,6 +20,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://romeohazel.com"),
   title: "Romeo Hazel — Developer Portfolio",
   description:
     "Shipped from obsession. Built to matter. Full stack developer, CSUDH, incoming SWE intern at Meta.",
@@ -27,6 +28,12 @@ export const metadata: Metadata = {
     title: "Romeo Hazel — Developer Portfolio",
     description: "Shipped from obsession. Built to matter.",
     type: "website",
+    url: "https://romeohazel.com",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Romeo Hazel — Developer Portfolio",
+    description: "Shipped from obsession. Built to matter.",
   },
 };
 
