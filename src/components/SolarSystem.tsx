@@ -77,6 +77,24 @@ const projects: PlantData[] = [
       "Redis-backed feed generation for fast timeline rendering without algorithmic ranking",
     ],
   },
+  {
+    name: "Chatly",
+    tagline: "AI chatbots that understand your business",
+    description:
+      "Fully managed AI chatbot platform for businesses. Train a bot on your products, FAQs, and brand voice — deploy it to your site with zero code. 24/7 customer support on autopilot.",
+    color: "#6ab0c4",
+    leafColor: "#5a8a6e",
+    leaves: ["Next.js", "React", "TypeScript", "Node.js", "AI/ML"],
+    status: "deployed",
+    metrics: "24/7 autopilot",
+    stemHeight: 165,
+    details: [
+      "Custom-trained AI chatbots that learn a business's products, policies, and communication style",
+      "Zero-code deployment — business owners embed a widget with no technical expertise required",
+      "Centralized dashboard with conversation analytics and lead capture tracking",
+      "Two-tier SaaS model with 5,000 and unlimited conversation plans scaling to any business size",
+    ],
+  },
 ];
 
 export default function SolarSystem() {
