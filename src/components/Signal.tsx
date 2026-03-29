@@ -3,11 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
 import { track } from "@vercel/analytics";
-
-const channels = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/romeohazel/", id: "li" },
-  { label: "GitHub", href: "https://github.com/romeohazel", id: "gh" },
-];
+import { channels } from "@/data/social";
 
 export default function Signal() {
   const { ref, isInView } = useInView(0.2);

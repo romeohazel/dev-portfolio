@@ -3,11 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAmbient } from "@/hooks/useAmbient";
-
-const links = [
-  { label: "garden", href: "#garden" },
-  { label: "roots", href: "#roots" },
-];
+import { navLinks } from "@/data/social";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -55,7 +51,7 @@ export default function Nav() {
           <div className="flex items-center gap-5">
             {/* Desktop links */}
             <div className="hidden md:flex items-center gap-6">
-              {links.map((link) => (
+              {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
@@ -123,7 +119,7 @@ export default function Nav() {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 bg-soil/95 backdrop-blur-md flex flex-col items-center justify-center gap-8"
           >
-            {links.map((link) => (
+            {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
