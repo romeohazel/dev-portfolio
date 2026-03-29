@@ -196,7 +196,7 @@ export default function Plant({ plant, isInView }: {
       {/* Plant visual growing upward */}
       <div
         className="relative flex items-end justify-center"
-        style={{ height: plant.stemHeight + 50, cursor: hasDetails ? "pointer" : undefined }}
+        style={{ height: plant.stemHeight + 50 }}
         onClick={() => {
           if (!hasDetails) return;
           if (!expanded) track("project_expand", { project: plant.name });
