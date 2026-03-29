@@ -59,7 +59,7 @@ export const projects: PlantData[] = [
     links: [{ label: "GitHub", href: "https://github.com/romeohazel/campus-market" }],
   },
   {
-    name: "Momentary",
+    name: "Sharespot",
     tagline: "Social media without the scoreboard",
     description:
       "No likes, no follower counts, no algorithm. Just people posting what they actually care about. Chronological feeds, private reactions sent directly to the creator, and zero vanity metrics.",
@@ -74,6 +74,7 @@ export const projects: PlantData[] = [
       "No follower counts, no like counts, no metrics visible anywhere in the app",
       "Redis-backed feed generation for fast timeline rendering without algorithmic ranking",
     ],
+    links: [{ label: "GitHub", href: "https://github.com/romeohazel/Sharespot" }],
   },
   {
     name: "Chatly",
