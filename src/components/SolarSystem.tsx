@@ -94,6 +94,7 @@ const projects: PlantData[] = [
       "Centralized dashboard with conversation analytics and lead capture tracking",
       "Two-tier SaaS model with 5,000 and unlimited conversation plans scaling to any business size",
     ],
+    links: [{ label: "Visit", href: "https://chatly-three.vercel.app/" }],
   },
 ];
 
