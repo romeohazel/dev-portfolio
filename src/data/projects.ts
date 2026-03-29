@@ -18,6 +18,7 @@ export const projects: PlantData[] = [
       "No sign-up required — share a one-time URL, recipient opens it, content is destroyed",
       "Built a custom key exchange protocol so even link interception doesn't expose content",
     ],
+    links: [{ label: "GitHub", href: "https://github.com/romeohazel/phantom" }],
   },
   {
     name: "ShadowAI",
@@ -36,6 +37,7 @@ export const projects: PlantData[] = [
       "WebSocket-powered live sessions let users spar virtually with friends in real time",
       "Global leaderboard with ELO-style ranking, daily streaks, and workout history tracking",
     ],
+    links: [{ label: "GitHub", href: "https://github.com/romeohazel/shadow-ai" }],
   },
   {
     name: "CampusMarket",
@@ -54,6 +56,7 @@ export const projects: PlantData[] = [
       "Real-time chat between buyers and sellers with push notifications",
       "Category-based browsing with search, filters, and location-based sorting",
     ],
+    links: [{ label: "GitHub", href: "https://github.com/romeohazel/campus-market" }],
   },
   {
     name: "Momentary",
