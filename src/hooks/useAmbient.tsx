@@ -13,7 +13,8 @@ export function AmbientProvider({ children }: { children: ReactNode }) {
 
   const toggle = useCallback(() => {
     if (!audioRef.current) {
-      const audio = new Audio("/ambient.mp3");
+      const audio = new Audio();
+      audio.src = audio.canPlayType("audio/webm; codecs=opus") ? "/ambient.webm" : "/ambient.mp3";
       audio.loop = true;
       audio.volume = 0.3;
       audioRef.current = audio;
